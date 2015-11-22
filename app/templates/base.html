@@ -1,0 +1,73 @@
+{% block doc -%}
+<!DOCTYPE html>
+<html {% block html_attribs %}{% endblock html_attribs %}>
+{%- block html %}
+    <head>
+    {%- block head %}
+        <title>{% block title %}ISEE{% endblock %}</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        {%- block styles %}
+            <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="/static/css/lab.css">
+        {%- endblock styles %}
+
+        {% block scripts %}
+            <script src="/static/js/jquery.min.js"></script>
+            <script src="/static/js/bootstrap.min.js"></script>
+        {%- endblock scripts %}
+
+    {%- endblock head %}
+    </head>
+
+    <body{% block body_attribs %}{% endblock body_attribs %}>
+    {% block body -%}
+
+        {% block navbar %}
+<nav class="navbar navbar-default nav-stick-to-top navbar-static-top" >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    <div class="navbar-header">
+        <img src="{{url_for('static', filename = 'pic/logo.png')}}" width="260" style="margin-left:220px;"/>
+        
+    </div>
+    <div class="navbar-header">
+      <p class="lab-title" height='100%'>iSEE</p>
+	  <p class="lab-title2" height='100%'>智能科学与系统实验室</p>
+      </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+      <ul class="nav navbar-nav navbar-right lab-nav-btn" >
+          <li><a href="{{url_for('index')}}" font="Arial";>Home</a></li>
+		  <li><a href="{{url_for('faculty')}}" >Research Focus</a></li>          
+		  <li><a href="{{url_for('student')}}">Faculties and Members</a></li> 
+          <li><a href="{{url_for('recruitment')}}">Recruitment</a></li> 
+		  
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+        {%- endblock navbar %}
+        {% block content -%}
+        {%- endblock content %}
+        {%- endblock body %}
+    {% block script%}
+    {% endblock script%}
+</body>
+{% block footer -%}
+<hr/>
+<footer class="footer">
+<div class="bottomlogo" ><img src="/static/pic/SYSU.gif" width="240" style="margin-left:280px;" ></div>
+<div class="bottomlogo"><img src="/static/pic/SYSU_motto.gif" width="160" style="margin-left:1000px;"></div>
+	<div class="bottomcontact_cn"></div>
+  <div class="bottomcontact_en">CopyRight © iSEE 智能科学与系统实验室<br> Sun Yat-Sen University, Guangzhou, P. R. China<br>
+  Last Modify Date: Nov 2015</div>
+			
+        </footer>
+		{%- endblock footer %}
+{%- endblock html %}
+</html>
+{% endblock doc -%}

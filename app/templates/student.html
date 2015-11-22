@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% import "components.html" as components %}
+
+
+
+
+
+{% macro make_student(person)%}
+{% set name = person[NAME_KEY] %}
+{% set English_name = person[ENGLISH_NAME_KEY] %}
+{% set image_path = person[IMAGE_PATH_KEY] %}
+{% set email = person[EMAIL_KEY] %}
+{% set url = person[URL_KEY] %}
+
+<div class="col-md-3 person-box">
+    <a
+    {% if not url %}
+    data-toggle="modal"
+    data-target="#modal_{{name}}"
+    {% else %}
+
+    href="{{url}}"  target="_blank"
+
+    {%endif%}
+    >
+        <img   class="person-img"  src="{{ url_for('static', filename = image_path) }}" />
+        <p class="person-name"> {{English_name}} </p>
+        <!-- <p class="person-direction"> {{research_direction}} </p> -->
+    </a>
+</div>
+{# 每人一个简介 模态窗口 #}
+<div class="modal fade" id="modal_{{name}}" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    {{English_name}}
+                </h2>
+            </div>
+            <div class="modal-body">
+                <img class="person-img"  src="{{ url_for('static', filename = image_path) }}" />
+                <h3> Email:</h3>
+                <p> {{email}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    OK
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+{% endmacro %}
+
+
+{% macro make_student_list(student_list)%}
+{% for person in student_list %}
+
+{{make_student(person)}}
+
+{% endfor %}
+{%endmacro%}
+
+
+
+
+{% block content %}
+
+<!-- {{ components.make_title('Faculties') }} -->
+<div class="container">
+<div class="jumbotron content">
+    <div class="row">
+        <div class="col-md-12">
+		<h2>Faculties</h2>
+                <hr/>
+            <div class="col-md-3 person-box">
+                <a
+                href="http://sist.sysu.edu.cn/main/default/teainfo.aspx?id=45&amp;no=1&amp;pId=10"  target="_blank"
+                >
+                    <img   class="person-img"  src="/static/pic/faculty/laijianhuang.jpg" />
+                    <p class="person-name"> Jian-Huang Lai </p>
+                    <p class="academic-title">Professor</p>
+                </a>
+
+            </div>
+
+
+            <div class="col-md-3 person-box">
+                <a
+                href="http://sist.sysu.edu.cn/~zhwshi/"  target="_blank"
+                >
+                    <img   class="person-img"  src="/static/pic/faculty/jason.jpg" />
+                    <p class="person-name"> Wei-Shi (Jason) Zheng </p>
+                    <p class="academic-title">Associate Professor</p>
+
+                </a>
+
+            </div>
+
+
+            <div class="col-md-3 person-box">
+                <a
+                href="http://web.siat.ac.cn/~xiaohua/"  target="_blank"
+                >
+                    <img   class="person-img"  src="/static/pic/faculty/xiexiaohua.jpg" />
+                    <p class="person-name"> Xiao-Hua Xie </p>
+                    <p class="academic-title">Research Professor</p>
+                </a>
+
+            </div>
+        </div>
+		</div>
+    </div>
+</div>
+
+<!-- {{ components.make_title('Research Fellows') }} -->
+<div class="container">
+<div class="jumbotron content">
+    <div class="row">
+	
+        <div class="col-md-12" >
+		<h2>Research Fellows</h2>
+                <hr/>
+            {{make_student_list(research_fellows_list)}}
+        </div>
+    </div>
+	</div>
+</div>
+
+
+
+<!-- {{ components.make_title('Ph.D') }} -->
+<div class="container">
+<div class="jumbotron content">
+    <div class="row">
+        <div class="col-md-12" >
+<h2>Ph.D</h2>
+                <hr/>
+            {{make_student_list(phd_list)}}
+        </div>
+    </div>
+	</div>
+</div>
+
+<!-- {{ components.make_title('Masters') }} -->
+<div class="container">
+<div class="jumbotron content">
+    <div class="row">
+        <div class="col-md-12" >
+<h2>Masters</h2>
+                <hr/>
+            {{make_student_list(master_list)}}
+        </div>
+    </div>
+	</div>
+</div>
+
+
+<!-- {{ components.make_title('Undergraduates') }} -->
+<div class="container">
+<div class="jumbotron content">
+    <div class="row">
+        <div class="col-md-12" >
+<h2>Undergraduates</h2>
+                <hr/>
+            {{make_student_list(undergraduate_list)}}
+        </div>
+    </div>
+	</div>
+</div>
+
+</div>
+
+
+{% endblock content %}

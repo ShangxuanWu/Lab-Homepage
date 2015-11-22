@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% import "components.html" as components %}
+
+
+{% block content %}
+{{ components.make_title('Research Project') }}
+<div class="container">
+
+    <!--
+    <p class="research-name"> Computer Vision </p>
+    <div class="research-project">
+    <p class="research-content">
+</p>
+</div>
+
+<p class="research-name"> Pattern Recognition </p>
+<div class="research-project">
+<p class="research-content">
+</p>
+</div>
+
+
+
+<p class="research-name"> Machine Learning </p>
+<div class="research-project">
+<p class="research-content">
+</p>
+</div>
+
+-->
+
+
+
+<div class="news">
+    <h2> Person Re-identification </h2>
+    <hr/>
+    <img src="{{ url_for('static', filename = 'pic/research_example.jpg') }}" height="200px" />
+    <br/><br/><br/>
+
+
+    <p style="color: rgb(58, 59, 184);font-size:20px;text-indent:2em;">
+       With the development of large-scale distributed multi-camera systems, large quantity of pedestrian information becomes available. Increasing demands for recognizing pedestrians in security applications (e.g. forensic search, multi-camera tracking and access control) lead to research on person re-identification. The task of person re-identification (re-id) is to match people in a distributed multi-camera surveillance system at different time and location. Person re-identification is a challenging problem with many difficulties including cross-view matching, low resolution, environment condition such as complicated background and illumination change, so a lot of open problems remain unsolved. Generally, existing works on person re-identification mainly focus on developing discriminative invariant feature for identity and optimizing the matching model. Many methods of metric learning, feature learning and deep learning have been developed. As for our research on re-id, we focus on solving the unaddressed problems in real-world application scenarios, e.g. open-world problem, partial occlusion problem, low resolution problem, clothes and illumination change problem, video-based re-id problem and so on. We are the first to address some of these problems and have made some progress in these challenging problems.
+    </p>
+</div>
+
+
+ <div class="news">
+     <h2>  Computer Vision  </h2>
+     <hr/>
+ </div>
+
+
+<div class="news">
+    <h2> Pattern Recognition </h2>
+    <hr/>
+</div>
+
+
+
+
+<div class="news">
+    <h2> Machine Learning </h2>
+    <hr/>
+
+</div>
+
+</div>
+{% endblock content%}
+
+
+<!--
+<h3>
+研究成果：
+</h3>
+<div class="research-result">
+<p> 论文1 </p>
+<p> 论文2 </p>
+<p> 专利1 </p>
+<p> 专利2 </p>
+</div>
+-->

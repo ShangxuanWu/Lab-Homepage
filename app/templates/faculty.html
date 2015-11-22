@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron content">
+                <h2>Face Analysis and Applications</h2>
+                <hr/>
+               <div display="inline">
+				<img src="{{url_for('static', filename = 'pic/reid.bmp')}}" width="530" align="center"/>
+			<br>			
+ 
+This project aims at making the machine understand and interpret human face through cameras (may use RGB, depth, multispectral information), such as the human identity recognition and 3d shape recovery. Towards real applications, we pay special attention to critical technical problems, including
+1) lighting preprocessing;
+2) face liveness detection; 
+3) heterogeneous face recognition;
+4) face hallucination; 
+5) facial 3d shape recovery；
+6) micro expression recognition;
+7) face landmarking;
+8) facial image quality assessment;
+9) large-scale face retrieval;
+	10) anti-diebstahl facial coding.
+ 
+ 
+	
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron content">
+                <h2>Intelligent Video Analysis</h2>
+                <hr/>
+<div display="inline">
+				<img src="{{url_for('static', filename = 'pic/hashing.jpg')}}" width="530" style="margin-left:0px;"/>
+					<br>	
+ 
+Intelligent video analysis focus on automatic video analysis and security alerts. It aims at changing passive surveillance into active identification, thus reducing the need for most manual monitoring and its associated costs. We have developed several practical algorithms for video-based applications, including
+1) detection of pedestrian, pedestrian, and special objects;  
+2) people counting;
+3) character recognition;
+4) multi-camera object tracking (our group won the Rank 1 in this topic in the 2014 National Graduate Contest on Smart-City Technology Competition);
+5) abnormal event detection (our group won the Rank 1 in this topic in the 2015 National Graduate Contest on Smart-City Technology Competition).
+ 
+ 
+	
+
+
+</div>
+				
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron content">
+                <h2> Kinect Based Body Analysis</h2>
+                <hr/>
+                <div display="inline">
+				<img src="{{url_for('static', filename = 'pic/reid.jpg')}}" width="530" style="margin-left:0px;"/>
+					<br>
+Kinect is a new sensor which can capture RGB, depth, and voice of a scene. It can be used as a 3D scanner that enables developers to create accurate 3D renderings in real time, and can also be used as a man-machine interface that allows users to interact naturally with computing technology. Based on the Kinect, we have developed following algorithms and integrated them into a practical dressing simulation system.
+ 1) human detection and segmentation;  
+ 2) human body landmarking.
+
+	
+
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron content">
+                <h2>Intrinsic Character Reconstruction</h2>
+                <hr/>
+				
+               <div class="divs">
+			   <div class="imgs"><img src="{{url_for('static', filename = 'pic/CNN.jpg')}}" width="530" style="margin-left:0px;"></div>
+				<div class="infos">
+					<br>	
+ 
+This project aims at inferring the underlying intrinsic physical characters (the 3D shape, illumination, shading, reflectance, etc.) that gave rise to observed images. Recovering these quantities from images is a core problem of vision, and facilitates the virtual reality applications such as the object recognition, object relighting, and object recoloring. We have developed some methods to seprate an image or multiple images into two kinds of intrinsic images (illumination image and reflectance image), now we are working on inferring three kinds of characters (shape, illumination, and reflectance) from different new-type cameras.
+
+		</div>
+
+</div>	
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron content">
+                <h2>Selected Fundamental Theories and Methods for Data Analysis</h2>
+                <hr/>
+				
+               <div class="divs">
+			   <div class="imgs"><img src="{{url_for('static', filename = 'pic/CNN.jpg')}}" width="530" style="margin-left:0px;"></div>
+				<div class="infos">
+					<br>	
+ 
+
+	
+To support different applications, we need to develop efficient, stable algorithms for analyzing a variety of datas especially for big datas, and to discovery underlying laws of datas and the inherent mechanism for previous methods.  Specifically, we have made contributions on following topics:
+	1) nonlinear clustering;
+  2)    large Scale Learning;
+	3) subspace learning;
+	4) sparse coding;
+		
+		</div>
+
+</div>	
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
