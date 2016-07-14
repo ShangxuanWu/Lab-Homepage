@@ -1,7 +1,7 @@
 ## iSEE Lab-Homepage
 [Homepage](http://isee.sysu.edu.cn "iSee Lab, SYSU") for iSEE lab @ Sun Yat-Sen University
 ***
-Based on Flask and Bootstrap
+Based on Flask and Bootstrap. Contributor: Jun Yang, Shangxuan Wu, Jia Lin @ iSee Lab, SYSU
 
 #Installation
 
